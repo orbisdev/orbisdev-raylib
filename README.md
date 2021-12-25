@@ -16,7 +16,7 @@ raylib is highly inspired by Borland BGI graphics lib and by XNA framework and i
 *NOTE for ADVENTURERS: raylib is a programming library to enjoy videogames programming; no fancy interface, no visual helpers, no auto-debugging... just coding in the most pure spartan-programmers way.*
 
 Ready to learn? 
-- Jump to already ported samples to PlayStation Vita [code examples!](https://github.com/orbisdeb/raylib4orbis_samples)
+- Jump to already ported samples to PlayStation Orbis [code examples!](https://github.com/orbisdeb/raylib4orbis_samples)
 - Jump to original samples [code examples!](http://www.raylib.com/examples.html)
 
 
