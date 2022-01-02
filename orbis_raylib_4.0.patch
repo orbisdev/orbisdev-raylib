@@ -1,5 +1,5 @@
 diff --git a/src/Makefile b/src/Makefile
-index 6fbb8a3f..942196e1 100644
+index 6fbb8a3f..48539478 100644
 --- a/src/Makefile
 +++ b/src/Makefile
 @@ -11,6 +11,8 @@
@@ -151,12 +151,12 @@ index 6fbb8a3f..942196e1 100644
 -	@echo "Error: Root permissions needed for installation. Try sudo make install"
 +	mkdir -p $(RAYLIB_INSTALL_PATH)
 +	mkdir -p $(RAYLIB_H_INSTALL_PATH)
-+	cp --update --verbose $(RAYLIB_RELEASE_PATH)/lib$(RAYLIB_LIB_NAME).a $(RAYLIB_INSTALL_PATH)/lib$(RAYLIB_LIB_NAME).a
-+	cp --update raylib.h $(RAYLIB_H_INSTALL_PATH)/raylib.h
-+	cp --update raymath.h $(RAYLIB_H_INSTALL_PATH)/raymath.h
-+	cp --update rlgl.h $(RAYLIB_H_INSTALL_PATH)/rlgl.h
-+	cp --update extras/physac.h $(RAYLIB_H_INSTALL_PATH)/physac.h
-+	cp --update rayspine.h $(RAYLIB_H_INSTALL_PATH)/rayspine.h
++	cp $(RAYLIB_RELEASE_PATH)/lib$(RAYLIB_LIB_NAME).a $(RAYLIB_INSTALL_PATH)/lib$(RAYLIB_LIB_NAME).a
++	cp raylib.h $(RAYLIB_H_INSTALL_PATH)/raylib.h
++	cp raymath.h $(RAYLIB_H_INSTALL_PATH)/raymath.h
++	cp rlgl.h $(RAYLIB_H_INSTALL_PATH)/rlgl.h
++	cp extras/physac.h $(RAYLIB_H_INSTALL_PATH)/physac.h
++	cp rayspine.h $(RAYLIB_H_INSTALL_PATH)/rayspine.h
 +	@echo "raylib development files installed/updated!"
  endif
  
@@ -166,11 +166,11 @@ index 6fbb8a3f..942196e1 100644
      endif
  else
 -	@echo "Error: Root permissions needed for uninstallation. Try sudo make uninstall"
-+	rm --force --interactive --verbose $(RAYLIB_H_INSTALL_PATH)/raylib.h
-+	rm --force --interactive --verbose $(RAYLIB_H_INSTALL_PATH)/raymath.h
-+	rm --force --interactive --verbose $(RAYLIB_H_INSTALL_PATH)/rlgl.h
-+	rm --force --interactive --verbose $(RAYLIB_H_INSTALL_PATH)/physac.h
-+	rm --force --interactive --verbose $(RAYLIB_H_INSTALL_PATH)/rayspine.h
++	rm $(RAYLIB_H_INSTALL_PATH)/raylib.h
++	rm $(RAYLIB_H_INSTALL_PATH)/raymath.h
++	rm $(RAYLIB_H_INSTALL_PATH)/rlgl.h
++	rm $(RAYLIB_H_INSTALL_PATH)/physac.h
++	rm $(RAYLIB_H_INSTALL_PATH)/rayspine.h
  endif
  
  # Clean everything
