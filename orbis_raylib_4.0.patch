@@ -323,6 +323,41 @@ index bbf2284b..edd94515 100644
  
     if (x0 <= x && x1 <= x)
        scanline[x] += e->direction * (y1-y0);
+diff --git a/src/rayspine.h b/src/rayspine.h
+new file mode 100644
+index 00000000..3d6fe867
+--- /dev/null
++++ b/src/rayspine.h
+@@ -0,0 +1,29 @@
++#include <spine/spine.h>
++#include <spine/extension.h>
++#ifndef SP_LAYER_SPACING
++#define SP_LAYER_SPACING 0
++#endif
++
++#ifndef SP_LAYER_SPACING_BASE
++#define SP_LAYER_SPACING_BASE 0
++#endif
++typedef struct Vertex 
++{
++	// Position in x/y plane
++	float x, y;
++
++	// UV coordinates
++	float u, v;
++
++	// Color, each channel in the range from 0-1
++	// (Should really be a 32-bit RGBA packed color)
++	float r, g, b, a;
++} Vertex;
++#define MAX_TEXTURES 10
++#define MAX_VERTICES_PER_ATTACHMENT 2048
++
++
++void SpineDrawRegion(Vertex* vertices, Texture* texture, Vector3 position, int* vertex_order);
++void SpineDrawMesh(Vertex *vertices, int start, int count, Texture *texture, Vector3 position, int *vertex_order);
++void SpineDrawSkeleton(spSkeleton *skeleton, Vector3 position);
++Texture2D *SpineCreateTexture2d(char *path);
 diff --git a/src/rcore.c b/src/rcore.c
 index 3b451552..8b4c7c5d 100644
 --- a/src/rcore.c
